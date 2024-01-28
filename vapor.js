@@ -1,6 +1,5 @@
-
 const hide = ' hide'
-const isClient = window.ipcRenderer !== undefined
+const isClient = navigator.appVersion.search('Electron') !== -1
 const clientClass = isClient ? '' : hide
 const isLogged = document.querySelector('#global_action_menu > .persona_name_text_content') !== null
 const loggedClass = isLogged ? '' : hide

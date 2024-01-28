@@ -220,9 +220,3 @@ function appheader() {
 }
 
 appheader()
-
-document.querySelector('#minimize > svg').addEventListener('click', () => {
-  if (isClient) {
-    window.ipcRenderer.send('minimizeApp')
-  }
-})
