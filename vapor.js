@@ -20,6 +20,14 @@ function addElement(element, parentSelector) {
   }
 }
 
+function addElementAfter(element, afterSelector) {
+  const after = document.querySelector(afterSelector)
+
+  if (after) {
+    after.insertAdjacentElement('afterEnd', element)
+  }
+}
+
 function createSVG(width, height, viewBox, d) {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
   svg.setAttribute('width', width)

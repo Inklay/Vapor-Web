@@ -43,10 +43,6 @@ a:visited {
   color: var(--textMain);
 }
 
-.hide {
-  display: none!important;
-}
-
 .navigation_arrow {
   -webkit-app-region: none;
   display: inline-flex;
@@ -177,8 +173,8 @@ a:visited {
   fill: var(--textMain);
 }
 
-#global_header > .content {
-  display: none;
+#global_header > .content, .home_page_gutter, .hide,  #store_header > .content {
+  display: none!important;
 }
 
 .action .application {
@@ -210,5 +206,104 @@ a:visited {
 
 .action .application div:hover {
   fill: var(--textMain);
+  color: var(--textMain);
+}
+
+nav {
+  background-color: var(--bgTertiary);
+  height: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+nav .tabs {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+nav .tab {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 3px;
+  font: var(--textBodyLarge);
+}
+
+nav .tab:hover {
+  background-color: rgba(49, 56, 67, 0.5);
+  color: var(--textMain);
+}
+
+nav .tab.selected {
+  background-color: var(--colorSecondary);
+}
+
+nav .reverse {
+  justify-content: flex-end;
+  flex-grow: 1;
+  display: flex;
+  height: 100%;
+}
+
+nav .reverse .settings {
+  margin-left: 7px;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  fill: var(--textDim);
+  background-color: rgba(118, 128, 140, 0.2);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+nav .reverse .settings:hover {
+  background-color: rgba(118, 128, 140, 0.4);
+  fill: var(--textMain);
+}
+
+nav .reverse .input {
+  display: flex;
+  background-color: rgba(14, 20, 27, 0.2);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 3px;
+  fill: var(--colorSecondary);
+  justify-content: center;
+  align-items: center;
+  margin-right: 80px;
+}
+
+nav .reverse .input svg {
+  cursor: pointer;
+}
+
+nav .reverse .input svg:hover {
+  fill: var(--textMain);
+}
+
+nav .reverse .input input {
+  width: 400px;
+  font: var(--textBodyMedium);
+  border: none;
+  background-color: transparent;
+  color: var(--colorSecondary);
+  height: 100%;
+}
+
+nav .reverse .input input::placeholder {
+  color: var(--colorSecondary);
+}
+
+nav .reverse .input input:focus {
   color: var(--textMain);
 }

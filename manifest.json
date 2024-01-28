@@ -8,7 +8,8 @@
     {
       "js": [
         "vapor.js",
-        "appHeader.js"
+        "appHeader.js",
+        "storeHeader.js"
       ],
       "css": ["vapor.css"],
       "matches": ["https://store.steampowered.com/*"]
