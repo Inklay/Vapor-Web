@@ -9,7 +9,8 @@
       "js": [
         "vapor.js",
         "appHeader.js",
-        "storeHeader.js"
+        "storeHeader.js",
+        "store.js"
       ],
       "css": ["vapor.css"],
       "matches": ["https://store.steampowered.com/*"]
