@@ -1,9 +1,9 @@
 
-const hide = ' -hide'
+const hide = ' hide'
 const isClient = window.ipcRenderer !== undefined
 const clientClass = isClient ? '' : hide
-const isLogged = document.querySelector('#global_action_menu > .global_action_link') !== undefined
-
+const isLogged = document.querySelector('#global_action_menu > .persona_name_text_content') !== null
+const loggedClass = isLogged ? '' : hide
 
 function deleteElement(selector) {
   const element = document.querySelector(selector)

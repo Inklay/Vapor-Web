@@ -154,6 +154,7 @@ function appheader() {
 
       function view() {
         const container = document.createElement('div')
+        container.setAttribute('class', clientClass)
         container.innerHTML = 'View'
         container.appendChild(createSVG('20', '21', '0 0 20 21', 'M6.76644 8.2418L9.99977 11.4751L13.2331 8.2418C13.5581 7.9168 14.0831 7.9168 14.4081 8.2418C14.7331 8.5668 14.7331 9.0918 14.4081 9.4168L10.5831 13.2418C10.2581 13.5668 9.73311 13.5668 9.40811 13.2418L5.58311 9.4168C5.25811 9.0918 5.25811 8.5668 5.58311 8.2418C5.90811 7.92513 6.44144 7.9168 6.76644 8.2418Z'))
 
@@ -162,7 +163,8 @@ function appheader() {
 
       function minimize() {
         const container = document.createElement('div')
-        container.setAttribute('class', 'window')
+
+        container.setAttribute('class', 'window' + clientClass)
         container.setAttribute('id', 'minimize')
         container.appendChild(createSVG('25', '25', '0 0 25 25', 'M7.29167 11.6264H17.7083C18.2812 11.6264 18.75 12.0952 18.75 12.6681C18.75 13.241 18.2812 13.7097 17.7083 13.7097H7.29167C6.71875 13.7097 6.25 13.241 6.25 12.6681C6.25 12.0952 6.71875 11.6264 7.29167 11.6264Z'))
 
@@ -171,7 +173,7 @@ function appheader() {
 
       function maximize() {
         const container = document.createElement('div')
-        container.setAttribute('class', 'window')
+        container.setAttribute('class', 'window' + clientClass)
         container.setAttribute('id', 'maximize')
         container.appendChild(createSVG('25', '25', '0 0 25 25', 'M8.31931 5.05627H19.9344C21.0959 5.05627 21.3423 5.68301 21.3423 6.44903V15.5019C21.3423 15.8849 21.2191 16.3497 20.6383 16.3497C20.0576 16.3497 19.9344 15.8849 19.9344 15.5019V7.1454C19.9344 6.7624 19.4593 6.44903 18.8785 6.44903H8.31931C7.73856 6.44903 7.2634 6.13566 7.2634 5.75265C7.2634 5.36964 7.73856 5.05627 8.31931 5.05627ZM5.15158 7.84181H16.7667C17.9282 7.84181 18.5265 8.46855 18.5265 9.23456V18.9838C18.5265 19.7498 17.9282 20.3766 16.7667 20.3766H5.15158C3.99006 20.3766 3.74364 19.7498 3.74364 18.9838V9.23456C3.74364 8.46855 3.99006 7.84181 5.15158 7.84181ZM6.20749 18.9838H15.7108C16.2915 18.9838 16.7667 18.6705 16.7667 18.2875V9.93094C16.7667 9.54793 16.2915 9.23456 15.7108 9.23456H6.20749C5.62674 9.23456 5.15158 9.54793 5.15158 9.93094V18.2875C5.15158 18.6705 5.62674 18.9838 6.20749 18.9838Z'))
 
@@ -180,7 +182,7 @@ function appheader() {
 
       function close() {
         const container = document.createElement('div')
-        container.setAttribute('class', 'window')
+        container.setAttribute('class', 'window' + clientClass)
         container.setAttribute('id', 'close')
         container.appendChild(createSVG('25', '25', '0 0 25 25', 'M19.0625 5.94786C18.6562 5.54161 18 5.54161 17.5937 5.94786L12.5 11.0312L7.40625 5.93744C7 5.53119 6.34375 5.53119 5.9375 5.93744C5.53125 6.34369 5.53125 6.99994 5.9375 7.40619L11.0312 12.4999L5.9375 17.5937C5.53125 17.9999 5.53125 18.6562 5.9375 19.0624C6.34375 19.4687 7 19.4687 7.40625 19.0624L12.5 13.9687L17.5937 19.0624C18 19.4687 18.6562 19.4687 19.0625 19.0624C19.4687 18.6562 19.4687 17.9999 19.0625 17.5937L13.9687 12.4999L19.0625 7.40619C19.4583 7.01036 19.4583 6.34369 19.0625 5.94786Z'))
 

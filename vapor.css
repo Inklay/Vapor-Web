@@ -44,7 +44,7 @@ a:visited {
 }
 
 .hide {
-  display: none;
+  display: none!important;
 }
 
 .navigation_arrow {
