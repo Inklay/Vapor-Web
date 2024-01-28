@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Vapor",
+  "version": "1.0.0",
+  "author": "Inklay",
+  "description": "A Steam redesign based on Juxtopposed's design",
+  "content_scripts": [
+    {
+      "js": [
+        "vapor.js",
+        "appHeader.js"
+      ],
+      "css": ["vapor.css"],
+      "matches": ["https://store.steampowered.com/*"]
+    },
+    {
+      "js": [
+        "vapor.js",
+        "appHeader.js"
+      ],
+      "css": ["vapor.css"],
+      "matches": ["https://steamcommunity.com/*"]
+    }
+  ]
+}
