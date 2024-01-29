@@ -1,3 +1,61 @@
+function createWhishlistButton(appid = undefined, whishlisted) {
+  const container = document.createElement('div')
+  
+  if (whishlisted) {
+    container.appendChild(createSVG('25', '25', '0 0 25 25', svg.whishListFull))
+    container.setAttribute('class', 'whishlist whishlisted')
+  } else {
+    container.appendChild(createSVG('25', '25', '0 0 25 25', svg.whishListEmpty))
+    container.setAttribute('class', 'whishlist')
+  }
+  
+  container.addEventListener('mouseenter', () => {
+    container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
+  })
+
+  container.addEventListener('mouseleave', () => {
+    if (container.getAttribute('class').search('whishlisted') === -1) {
+      container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListEmpty)
+    }
+  })
+
+  if (appid !== undefined) {
+    container.addEventListener('click', () => {
+      let url
+      const whishlisted = container.getAttribute('class').search('whishlisted') !== -1
+
+      if (whishlisted) {
+        url = 'https://store.steampowered.com/api/removefromwishlist'
+      } else {
+        url = 'https://store.steampowered.com/api/addtowishlist'
+      }
+      const xhr = new XMLHttpRequest()
+      xhr.open('POST', url, true)
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8')
+      xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest')
+      xhr.send(`sessionid=${sessionId}&appid=${appid}`)
+      xhr.onload = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          updateWishlistCount(JSON.parse(xhr.response).wishlistCount)
+          updateWishlistCount(JSON.parse(xhr.response).wishlistCount)
+          if (whishlisted) {
+            container.setAttribute('class', 'whishlist')
+            container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListEmpty)
+          } else {
+            container.setAttribute('class', 'whishlist whishlisted')
+            container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
+          }
+        }
+      }
+    })
+  }
+  return container
+}
+
+function updateWishlistCount(count) {
+  document.querySelector('#whishlist-tab').innerHTML = `Whishlist (${count})`
+}
+
 function store() {
   document.querySelector('.home_page_body_ctn .home_page_content').setAttribute('class', '')
   document.querySelectorAll('.store_main_capsule .reason .main.bytags').forEach((value, _) => {
@@ -8,10 +66,25 @@ function store() {
     })
   })
 
-  document.querySelectorAll('.store_main_capsule .discount_block .discount_prices').forEach((value, _) => {
+  document.querySelectorAll('.store_main_capsule .info .discount_block .discount_prices').forEach((value, _) => {
     const isDiscounted = value.parentNode.getAttribute('data-discount') != '0'
     const shownPrice = value.childNodes[0].innerHTML
     const url = value.parentNode.parentNode.parentNode.getAttribute('href')
+    const whishlisted = value.parentNode.parentNode.parentNode.childNodes[2].getAttribute('class').search('ds_wishlist_flag') !== -1
+    const appid = value.parentNode.parentNode.parentNode.getAttribute('data-ds-appid')
+
+    value.parentNode.parentNode.childNodes[2].insertAdjacentElement('afterEnd', value.parentNode.parentNode.childNodes[4])
+
+    // carousel container
+    value.parentNode.parentNode.parentNode.removeAttribute('href')
+
+    // game banner
+    transformTag(value.parentNode.parentNode.parentNode.childNodes[0], 'a')
+    value.parentNode.parentNode.parentNode.childNodes[0].setAttribute('href', url)
+
+    // game name
+    transformTag(value.parentNode.parentNode.childNodes[0], 'a')
+    value.parentNode.parentNode.childNodes[0].setAttribute('href', url)
 
     function discountAmount() {
       const container = document.createElement('div')
@@ -75,18 +148,10 @@ function store() {
       return button
     }
 
-    function whishlist() {
-      const container = document.createElement('div')
-      container.setAttribute('class', 'whishlist add')
-      container.appendChild(createSVG('25', '25', '0 0 25 25', 'M19.9102 4.49004C17.2702 2.69004 14.0102 3.53004 12.2502 5.59004C10.4902 3.53004 7.23021 2.68004 4.59021 4.49004C3.19021 5.45004 2.31021 7.07004 2.25021 8.78004C2.11021 12.66 5.55021 15.77 10.8002 20.54L10.9002 20.63C11.6602 21.32 12.8302 21.32 13.5902 20.62L13.7002 20.52C18.9502 15.76 22.3802 12.65 22.2502 8.77004C22.1902 7.07004 21.3102 5.45004 19.9102 4.49004ZM12.3502 19.05L12.2502 19.15L12.1502 19.05C7.39021 14.74 4.25021 11.89 4.25021 9.00004C4.25021 7.00004 5.75021 5.50004 7.75021 5.50004C9.29021 5.50004 10.7902 6.49004 11.3202 7.86004H13.1902C13.7102 6.49004 15.2102 5.50004 16.7502 5.50004C18.7502 5.50004 20.2502 7.00004 20.2502 9.00004C20.2502 11.89 17.1102 14.74 12.3502 19.05Z'))
-
-      return container
-    }
-
     value.innerHTML = ''
 
     if (isLogged) {
-      value.appendChild(whishlist())
+      value.appendChild(createWhishlistButton(appid, whishlisted))
     }
     if (isDiscounted) {
       value.appendChild(discountAmount())

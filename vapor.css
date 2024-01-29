@@ -376,6 +376,10 @@ nav .reverse .input input:focus {
   padding: 0px;
 }
 
+.carousel_items .store_main_capsule .app_name:hover {
+  color: var(--colorPrimary) !important;
+}
+
 .carousel_items .store_main_capsule .ds_options {
   display: none;
 }
@@ -448,6 +452,7 @@ nav .reverse .input input:focus {
 
 .store_main_capsule .screenshots > div {
   padding: 3px !important;
+  cursor: pointer;
 }
 
 #home_takeunder_ctn {
@@ -462,6 +467,11 @@ nav .reverse .input input:focus {
   border-radius: 3px;
   box-shadow: none !important;
   background-color: var(--bgMain) !important;
+  color: var(--textMain) !important;
+}
+
+.broadcast_live_stream_icon:hover {
+  color: var(--textMain) !important;
 }
 
 .info .discount_block {
@@ -471,7 +481,9 @@ nav .reverse .input input:focus {
 }
 
 .info .platforms {
-  display: none;
+  position: relative !important;
+  right: 0px !important;
+  padding-left: 5px;
 }
 
 .button {
@@ -530,14 +542,13 @@ nav .reverse .input input:focus {
 }
 
 .whishlist {
-  fill: var(--textDim);
+  fill: var(--textMain);
   background-color: var(--bgHighlight);
   cursor: pointer;
   border-radius: 3px;
 }
 
-.whishlist.add:hover {
-  fill: var(--textMain);
+.whishlist:hover {
   background-color: var(--bgHover);
 }
 
@@ -550,4 +561,8 @@ nav .reverse .input input:focus {
   padding: 9px;
   margin-right: auto;
   margin-left: 0;
+}
+
+.store_main_capsule  > .ds_wishlist_flag {
+  display: none
 }
