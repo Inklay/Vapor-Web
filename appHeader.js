@@ -59,7 +59,7 @@ function appheader() {
     container.appendChild(steamLogo())
     container.appendChild(createTab('https://store.steampowered.com/', window.location.href.search('store.steampowered.com') != -1, false, 'store'))
     container.appendChild(createTab('https://steamcommunity.com/', window.location.href.search('steamcommunity.com') != -1 && window.location.href.search('steamcommunity.com/id') == -1, false, 'community'))
-    container.appendChild(createTab('userProfileUrl', window.location.href.search(userProfileUrl) != -1, !isLogged, userName))
+    container.appendChild(createTab(userProfileUrl, window.location.href.search(userProfileUrl) != -1, !isLogged, userName))
     container.appendChild(createTab('/client/library', window.location.href.search('/client/library') != -1, !isClient, 'library'))
     container.appendChild(createTab('/client/downloads', window.location.href.search('/client/downloads') != -1, !isClient, 'downloads'))
   

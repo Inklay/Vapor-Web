@@ -26,11 +26,11 @@
 }
 
 body {
-  color: var(--textMain)!important;
+  color: var(--textMain) !important;
 }
 
 #global_header {
-  background-color: var(--bgMain)!important;
+  background-color: var(--bgMain) !important;
   height: 60px;
 }
 
@@ -90,7 +90,7 @@ a:visited {
 }
 
 .header .nav a:hover {
-  color: var(--textDim)!important;
+  color: var(--textDim) !important;
 }
 
 .header .nav img {
@@ -98,7 +98,7 @@ a:visited {
 }
 
 .tab-selected, .tab-selected:visited {
-  color: var(--colorPrimary)!important;
+  color: var(--colorPrimary) !important;
 }
 
 .action {
@@ -173,8 +173,8 @@ a:visited {
   fill: var(--textMain);
 }
 
-#global_header > .content, .home_page_gutter, .hide,  #store_header > .content, .discount_icon {
-  display: none!important;
+#global_header > .content,.home_page_gutter, .hide,  #store_header > .content, .discount_icon, .home_hardware_banner, .home_ctn.home_content_ctn.content_more, .home_ctn.home_content_ctn.bottom_content {
+  display: none !important;
 }
 
 .action .application {
@@ -315,7 +315,7 @@ nav .reverse .input input:focus {
   background-size: 100% 80vh;
 }
 
-.home_page_content_title {
+.home_page_content_title, .home_page_content > .title {
   font: normal 400 16px/1.4 "Motiva Sans", Arial, Sans-Serif !important;
 }
 
@@ -563,6 +563,27 @@ nav .reverse .input input:focus {
   margin-left: 0;
 }
 
-.store_main_capsule  > .ds_wishlist_flag {
-  display: none
+.store_main_capsule > .ds_wishlist_flag {
+  display: none;
+}
+
+.friends_recently_purchased, .marketingmessage_area, .recommended_creators_ctn, .home_ctn > .big_buttons.home_page_content, .discovery_queue_ctn, .deep_dive_block, .recommended_by_steam_labs_ctn {
+  display: none !important;
+}
+
+.home_ctn.tab_container {
+  background: none !important;
+}
+
+.btn_uppercase > span {
+  border-radius: 3px !important;
+  border: 1px solid rgba(118, 128, 140, 0.20) !important;
+  color: var(--textDim) !important;
+  padding: 4px 6px !important;
+  text-transform: none !important;
+}
+
+.btn_uppercase > span:hover {
+  color: var(--textMain) !important;
+  border-color: rgba(118, 128, 140, 0.60) !important;
 }

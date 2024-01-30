@@ -26,8 +26,12 @@ function createWhishlistButton(appid = undefined, whishlisted) {
 
       if (whishlisted) {
         url = 'https://store.steampowered.com/api/removefromwishlist'
+        container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListEmpty)
+        container.setAttribute('class', 'whishlist')
       } else {
         url = 'https://store.steampowered.com/api/addtowishlist'
+        container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
+        container.setAttribute('class', 'whishlist whishlisted')
       }
       const xhr = new XMLHttpRequest()
       xhr.open('POST', url, true)
@@ -37,14 +41,6 @@ function createWhishlistButton(appid = undefined, whishlisted) {
       xhr.onload = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
           updateWishlistCount(JSON.parse(xhr.response).wishlistCount)
-          updateWishlistCount(JSON.parse(xhr.response).wishlistCount)
-          if (whishlisted) {
-            container.setAttribute('class', 'whishlist')
-            container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListEmpty)
-          } else {
-            container.setAttribute('class', 'whishlist whishlisted')
-            container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
-          }
         }
       }
     })
@@ -70,7 +66,6 @@ function store() {
     const isDiscounted = value.parentNode.getAttribute('data-discount') != '0'
     const shownPrice = value.childNodes[0].innerHTML
     const url = value.parentNode.parentNode.parentNode.getAttribute('href')
-    const whishlisted = value.parentNode.parentNode.parentNode.childNodes[2].getAttribute('class').search('ds_wishlist_flag') !== -1
     const appid = value.parentNode.parentNode.parentNode.getAttribute('data-ds-appid')
 
     value.parentNode.parentNode.childNodes[2].insertAdjacentElement('afterEnd', value.parentNode.parentNode.childNodes[4])
@@ -97,28 +92,31 @@ function store() {
     function price() {
       function basePrice() {
         const container = document.createElement('div')
-        if (isDiscounted) {
-          const xhr = new XMLHttpRequest()
+        const xhr = new XMLHttpRequest()
           xhr.open('GET', url, true)
           xhr.send()
           xhr.onload = () => {
             if (xhr.readyState == 4 && xhr.status == 200) {
               const parser = new DOMParser()
               const data = parser.parseFromString(xhr.response, 'text/html')
-              if (data.querySelector('.normal_price') != null) {
-                container.innerHTML = data.querySelector('.normal_price').innerHTML
+              if (isDiscounted) {
+                if (data.querySelector('.normal_price') != null) {
+                  container.innerHTML = data.querySelector('.normal_price').innerHTML
+                } else {
+                  container.innerHTML = data.querySelector('.discount_original_price').innerHTML
+                }
+                container.setAttribute('class', 'base-price discounted')
               } else {
-                container.innerHTML = data.querySelector('.discount_original_price').innerHTML
+                container.setAttribute('class', 'base-price')
+                container.innerHTML = shownPrice
+              }
+
+              if (data.querySelector('#add_to_wishlist_area_success').getAttribute('style') == null) {
+                value.childNodes[0].setAttribute('class', 'whishlist whishlisted')
+                value.childNodes[0].childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
               }
             }
           }
-
-          container.setAttribute('class', 'base-price discounted')
-        } else {
-          container.setAttribute('class', 'base-price')
-          container.innerHTML = shownPrice
-        }
-
         return container
       }
 
@@ -149,14 +147,15 @@ function store() {
     }
 
     value.innerHTML = ''
+    const priceContainer = price()
 
     if (isLogged) {
-      value.appendChild(createWhishlistButton(appid, whishlisted))
+      value.appendChild(createWhishlistButton(appid, false))
     }
     if (isDiscounted) {
       value.appendChild(discountAmount())
     }
-    value.appendChild(price())
+    value.appendChild(priceContainer)
     value.appendChild(button())
   })
 }
