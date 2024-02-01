@@ -518,17 +518,17 @@ nav .reverse .input input:focus {
   display: none !important;
 }
 
-.discount_prices .base-price {
+.carousel_items .base-price {
   color: var(--textMain);
   font: var(--textBodyMedium);
 }
 
-.discount_prices .base-price.discounted {
+.carousel_items .base-price.discounted {
   color: var(--textDim);
   text-decoration: line-through;
 }
 
-.discount_prices .discount-price {
+.carousel_items .discount-price {
   color: var(--accentGreen);
   font: var(--textBodyMedium);
 }
@@ -552,7 +552,7 @@ nav .reverse .input input:focus {
   background-color: var(--bgHover);
 }
 
-.discount_block .whishlist {
+.carousel_items .whishlist {
   display: flex;
   align-items: flex-end;
   align-items: center;
@@ -567,7 +567,7 @@ nav .reverse .input input:focus {
   display: none;
 }
 
-.friends_recently_purchased, .marketingmessage_area, .recommended_creators_ctn, .home_ctn > .big_buttons.home_page_content, .discovery_queue_ctn, .deep_dive_block, .recommended_by_steam_labs_ctn {
+.friends_recently_purchased, .marketingmessage_area, .recommended_creators_ctn, .home_ctn > .big_buttons.home_page_content, .discovery_queue_ctn, .deep_dive_block, .recommended_by_steam_labs_ctn, #spotlight_carousel {
   display: none !important;
 }
 
@@ -586,4 +586,71 @@ nav .reverse .input input:focus {
 .btn_uppercase > span:hover {
   color: var(--textMain) !important;
   border-color: rgba(118, 128, 140, 0.60) !important;
+}
+
+.content_hub_capsule_ctn > .gradient, .content_hub_capsule_ctn > img {
+  border-radius: 5px;
+}
+
+.paging_capsules > .store_capsule_container > div {
+  width: 100% !important;
+}
+
+.content_hub_capsule_ctn .label_ctn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100% !important;
+  bottom: 0px !important;
+  padding: 0px !important;
+}
+
+.content_hub_capsule_ctn .label {
+  text-transform: none !important;
+  font: var(--textHeadingMedium) !important;
+}
+
+.home_special_offers_group {
+  width: 100% !important;
+  display: flex !important;
+}
+
+.carousel_items .large {
+  padding: 15px;
+  background-color: var(--bgMain);
+  border-radius: 5px;
+}
+
+.carousel_items .large img {
+  width: 296px;
+  height: 140px !important;
+  border-radius: 3px;
+}
+
+.special_offers .arrow {
+  top: 25% !important;
+}
+
+.carousel_items .home_special_offers_group .app_name {
+  display: flex;
+  font: var(--textHeadingSmall);
+  align-items: center;
+  padding: 5px 0px;
+  height: 50px;
+}
+
+.priceContainer {
+  display: flex;
+  gap: 10px;
+  flex-direction: row-reverse;
+
+}
+
+.store_main_capsule > .broadcast_live_stream_icon {
+  display: none !important;
+}
+
+.large .discount_prices {
+  padding: 0px !important
 }

@@ -9,8 +9,12 @@
       "js": [
         "vapor.js",
         "appHeader.js",
-        "storeHeader.js",
-        "store.js"
+        "store/header.js",
+        "store/store.js",
+        "store/carousel/utils.js",
+        "store/carousel/featured.js",
+        "store/carousel/category.js",
+        "store/carousel/specialOffers.js"
       ],
       "css": ["vapor.css"],
       "matches": ["https://store.steampowered.com/*"]

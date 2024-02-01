@@ -90,3 +90,13 @@ function transformTag(tagIdOrElem, tagType){
   newNode.style.cssText = elem.style.cssText
   parent.replaceChild(newNode, elem)
 }
+
+function removeTextNode(element , recursive = false) {
+  element.childNodes.forEach((child, _) => {
+    if (child.nodeType === 3) {
+      child.remove()
+    } else if (recursive) {
+      removeTextNode(child)
+    }
+  })
+}
