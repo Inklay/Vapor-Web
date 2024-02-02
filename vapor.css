@@ -632,7 +632,7 @@ nav .reverse .input input:focus {
   top: 25% !important;
 }
 
-.carousel_items .home_special_offers_group .app_name {
+.home_special_offers_group .app_name, .specials_under10 .app_name {
   display: flex;
   font: var(--textHeadingSmall);
   align-items: center;
@@ -644,13 +644,23 @@ nav .reverse .input input:focus {
   display: flex;
   gap: 10px;
   flex-direction: row-reverse;
-
 }
 
-.store_main_capsule > .broadcast_live_stream_icon {
+.store_main_capsule > .broadcast_live_stream_icon, .store_capsule .broadcast_live_stream_icon, .store_capsule .ds_options,  .store_capsule .ds_flag.ds_wishlist_flag {
   display: none !important;
 }
 
 .large .discount_prices {
   padding: 0px !important
+}
+
+.recently_updated .store_capsule, .specials_under10 .store_capsule {
+  padding: 10px;
+  background: none !important;
+  background-color: var(--bgMain) !important;
+  width: 224px !important;
+}
+
+.specials_under10 .carousel_items > div {
+  height: fit-content !important;
 }
