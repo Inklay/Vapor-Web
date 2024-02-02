@@ -661,6 +661,14 @@ nav .reverse .input input:focus {
   width: 224px !important;
 }
 
+.specials_under10 .store_capsule img {
+  width: 100%;
+}
+
+.specials_under10 .store_capsule .capsule.headerv5 {
+  padding: 0px;
+}
+
 .specials_under10 .carousel_items > div {
   height: fit-content !important;
 }

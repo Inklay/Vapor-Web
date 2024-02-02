@@ -36,6 +36,12 @@ function under10() {
 
     getGameData(gameUrl, updateGameData, {shownPrice, whishlistContainer, priceContainer, isDiscounted})
 
+    const link = document.createElement('a')
+    link.setAttribute('href', gameUrl)
+    link.appendChild(value.parentElement.querySelector('.capsule > img'))
+    value.parentElement.querySelector('.capsule').append(link)
+
+    value.parentElement.removeAttribute('href')
     value.innerHTML = ''
     value.appendChild(appName())
     value.appendChild(info())
