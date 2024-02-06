@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Vapor",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": "Inklay",
   "description": "A Steam redesign based on Juxtopposed's design",
   "content_scripts": [
@@ -16,7 +16,8 @@
         "store/carousel/category.js",
         "store/carousel/specialOffers.js",
         "store/carousel/recentlyUpdated.js",
-        "store/carousel/under10.js"
+        "store/carousel/under10.js",
+        "store/grid.js"
       ],
       "css": ["vapor.css"],
       "matches": ["https://store.steampowered.com/*"]

@@ -281,6 +281,8 @@ nav .reverse .input {
   justify-content: center;
   align-items: center;
   margin-right: 80px;
+  width: 40%;
+  max-width: 400px;
 }
 
 nav .reverse .input svg {
@@ -292,12 +294,12 @@ nav .reverse .input svg:hover {
 }
 
 nav .reverse .input input {
-  width: 400px;
   font: var(--textBodyMedium);
   border: none;
   background-color: transparent;
   color: var(--colorSecondary);
   height: 100%;
+  width: 100%;
 }
 
 nav .reverse .input input::placeholder {
@@ -518,17 +520,17 @@ nav .reverse .input input:focus {
   display: none !important;
 }
 
-.carousel_items .base-price {
+.base-price {
   color: var(--textMain);
   font: var(--textBodyMedium);
 }
 
-.carousel_items .base-price.discounted {
+.base-price.discounted {
   color: var(--textDim);
   text-decoration: line-through;
 }
 
-.carousel_items .discount-price {
+.discount-price {
   color: var(--accentGreen);
   font: var(--textBodyMedium);
 }
@@ -552,7 +554,7 @@ nav .reverse .input input:focus {
   background-color: var(--bgHover);
 }
 
-.carousel_items .whishlist {
+.carousel_items .whishlist, .grid_item .whishlist {
   display: flex;
   align-items: flex-end;
   align-items: center;
@@ -644,9 +646,10 @@ nav .reverse .input input:focus {
   display: flex;
   gap: 10px;
   flex-direction: row-reverse;
+  justify-content: center;
 }
 
-.store_main_capsule > .broadcast_live_stream_icon, .store_capsule .broadcast_live_stream_icon, .store_capsule .ds_options,  .store_capsule .ds_flag.ds_wishlist_flag {
+.store_main_capsule > .broadcast_live_stream_icon, .store_capsule .broadcast_live_stream_icon, .store_capsule .ds_options,  .store_capsule .ds_flag.ds_wishlist_flag, .top_new_releases {
   display: none !important;
 }
 
@@ -671,4 +674,49 @@ nav .reverse .input input:focus {
 
 .specials_under10 .carousel_items > div {
   height: fit-content !important;
+}
+
+.grid_item {
+  background-color: var(--bgMain);
+  width: 475px;
+  padding: 15px;
+  border-radius: 3px;
+  display: flex;
+}
+
+.grid_item_container {
+  display: flex;
+  gap: 10px;
+}
+
+.home_page_content.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.grid img {
+  border-radius: 3px;
+  padding-right: 5px;
+  height: 100px;
+}
+
+.grid .app_name {
+  font: var(--textHeadingSmall);
+  height: 50px;
+}
+
+.grid .app_info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grid .discount_prices {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.home_ctn.tab_container {
+  display: none !important;
 }

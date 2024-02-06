@@ -102,7 +102,7 @@ function getGameData(url, callback, callbackData) {
   }
 }
 
-function createPrice(isDiscounted, discount, shownPrice) {
+function createPrice(isDiscounted, discount, shownPrice, shownDiscountedPrice = null) {
   function discountAmount() {
     const container = document.createElement('div')
     container.setAttribute('class', 'discount-amount')
@@ -114,6 +114,15 @@ function createPrice(isDiscounted, discount, shownPrice) {
   function price() {
     function basePrice() {
       const container = document.createElement('div')
+      container.innerHTML = shownPrice
+      if (shownDiscountedPrice || !isDiscounted) {
+        container.innerHTML = shownPrice
+      }
+      if (isDiscounted) {
+        container.setAttribute('class', 'base-price discounted')
+      } else {
+        container.setAttribute('class', 'base-price')
+      }
   
       return container
     }
@@ -121,7 +130,11 @@ function createPrice(isDiscounted, discount, shownPrice) {
     function discountedPrice() {
       const container = document.createElement('div')
       container.setAttribute('class', 'discount-price')
-      container.innerHTML = shownPrice
+      if (shownDiscountedPrice) {
+        container.innerHTML = shownDiscountedPrice
+      } else if (isDiscounted) {
+        container.innerHTML = shownPrice
+      }
   
       return container
     }
