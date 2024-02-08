@@ -646,7 +646,7 @@ nav .reverse .input input:focus {
   display: flex;
   gap: 10px;
   flex-direction: row-reverse;
-  justify-content: center;
+  align-items: center;
 }
 
 .store_main_capsule > .broadcast_live_stream_icon, .store_capsule .broadcast_live_stream_icon, .store_capsule .ds_options,  .store_capsule .ds_flag.ds_wishlist_flag, .top_new_releases {
@@ -717,6 +717,57 @@ nav .reverse .input input:focus {
   flex-direction: row-reverse;
 }
 
-.home_ctn.tab_container {
+.home_ctn.tab_container, .best_selling_vr_ctn {
   display: none !important;
+}
+
+#live_streams_carousel .store_capsule {
+  padding: 15px;
+  background-color: var(--bgMain) !important;
+  border-radius: 3px;
+  width: 285px !important;
+}
+
+#live_streams_carousel .store_capsule_container > div {
+  display: flex !important;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#live_streams_carousel .capsule.headerv5 {
+  padding-top: 160px !important;
+}
+
+#live_streams_carousel .capsule.headerv5 img {
+  border-radius: 3px;
+}
+
+#live_streams_carousel .capsule.headerv5 .live_stream_play_icon {
+  top: 52px !important;
+  left: 102px !important;
+}
+
+#live_streams_carousel .live_stream_app {
+  font: var(--textHeadingSmall);
+}
+
+#live_streams_carousel .title {
+  flex-direction: row !important;
+  margin-left: 0px !important;
+  margin-top: 10px !important;
+  padding: 0px !important;
+}
+
+.live_streams_ctn  h2 {
+  font: var(--textBodyLarge) !important;
+}
+
+#live_streams_carousel .live_stream_app:hover {
+  color: var(--colorPrimary);
+}
+
+.live_streams_ctn .store_capsule {
+  margin-bottom: 8px;
+  margin-right: 5px;
 }
