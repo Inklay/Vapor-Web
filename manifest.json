@@ -17,7 +17,8 @@
         "store/carousel/specialOffers.js",
         "store/carousel/recentlyUpdated.js",
         "store/carousel/under10.js",
-        "store/grid.js"
+        "store/grid.js",
+        "store/footer.js"
       ],
       "css": ["vapor.css"],
       "matches": ["https://store.steampowered.com/*"]

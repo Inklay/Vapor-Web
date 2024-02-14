@@ -54,7 +54,7 @@ function specialOffers() {
           imgUrls.push(spotlightChild.childNodes[0].childNodes[0].childNodes[0].getAttribute('src'))
           appIds.push(spotlightChild.childNodes[0].getAttribute('data-ds-appid'))
         }
-        prices.push(spotlightChild.querySelector('.discount_final_price').innerHTML)
+        prices.push(spotlightChild.querySelector('.discount_final_price')?.innerHTML)
         discounts.push(spotlightChild.querySelector('.discount_block').getAttribute('data-discount'))
       })
     }

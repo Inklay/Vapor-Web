@@ -22,7 +22,7 @@ function createGrid(classId) {
       discountedPrices.push(element.querySelector('.discount_final_price').innerText)
       discountAmounts.push(element.querySelector('.discount_block.tab_item_discount').getAttribute('data-discount'))
     } else {
-      prices.push(element.querySelector('.discount_final_price').innerText)
+      prices.push(element.querySelector('.discount_final_price')?.innerText)
       discountedPrices.push(null)
       discountAmounts.push(0)
     }

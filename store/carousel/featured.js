@@ -10,7 +10,7 @@ function featured() {
 
   document.querySelectorAll('.store_main_capsule .info .discount_block .discount_prices').forEach((value, _) => {
     const isDiscounted = value.parentNode.getAttribute('data-discount') != '0'
-    const shownPrice = value.childNodes[0].innerHTML
+    const shownPrice = value.querySelector('.discount_final_price').innerHTML
     const url = value.parentNode.parentNode.parentNode.getAttribute('href')
     const appid = value.parentNode.parentNode.parentNode.getAttribute('data-ds-appid')
 
