@@ -776,7 +776,7 @@ nav .reverse .input input:focus {
   background-color: var(--bgMain) !important;
 }
 
-.footer_content, .ds_flag.ds_owned_flag {
+.footer_content, .ds_flag.ds_owned_flag, .recently_updated .discount_block  {
   display: none !important;
 }
 
@@ -845,4 +845,41 @@ nav .reverse .input input:focus {
 
 .vapor_footer .socialLinks a:hover svg {
   fill: var(--textMain);
+}
+
+.recently_updated .capsule.headerv5 img {
+  border-radius: 3px;
+}
+
+.recently_updated .recently_updated_desc {
+  color: var(--textMain) !important;
+  font: var(--textBodyLarge);
+  border: none !important;
+}
+
+.recently_updated .recently_updated_announcement_link, .recently_updated .ds_owned_flag, .recently_updated .store_capsule .ds_wishlist_flag {
+  background-color: var(--bgHighlight);
+  padding: 8px !important;
+  border-radius: 3px;
+  color: var(--textMain) !important;
+  font: var(--textBodySmall) !important;
+  text-align: center;
+}
+
+.recently_updated .recently_updated_announcement_link:hover {
+  background-color: var(--bgHover);
+}
+
+.recently_updated .ds_owned_flag, .recently_updated .store_capsule .ds_wishlist_flag {
+  margin-top: 5px;
+  display: block !important;
+  position: relative !important;
+  background: none !important;
+  top: 0px !important;
+  box-shadow: none !important;
+  border: 1px solid var(--bgHighlight);
+}
+
+.recently_updated_apps .carousel_thumbs {
+  display: none !important;
 }
