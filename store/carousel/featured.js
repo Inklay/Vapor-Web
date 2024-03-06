@@ -1,5 +1,5 @@
 function featured() {
-  document.querySelector('.home_page_body_ctn .home_page_content').setAttribute('class', '')
+  document.querySelector('.home_page_body_ctn .home_page_content')?.setAttribute('class', '')
   document.querySelectorAll('.store_main_capsule .reason .main.bytags').forEach((value, _) => {
     value.childNodes.forEach((child, _) => {
       if (child.nodeType === 3) {

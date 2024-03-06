@@ -21,7 +21,6 @@ function footer() {
     function logos() {
       const container = document.createElement('div')
       container.setAttribute('class', 'logos')
-      console.log(valveLogo)
       container.appendChild(valveLogo)
       steamLogo.innerHTML = steamLogoSVG
       container.appendChild(steamLogo)

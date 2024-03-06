@@ -8,7 +8,7 @@ function createGrid(classId) {
   const appIds = []
   const whishlisted = []
   let idx = 0
-  const title = document.querySelector(`${classId}_trigger`).innerText
+  const title = document.querySelector(`${classId}_trigger`)?.innerText
 
   function getItemData(element) {
     gameUrls.push(element.getAttribute('href'))

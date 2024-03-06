@@ -1,7 +1,7 @@
 function specialOffers() {
   const carouselName = 'spotlight'
   const carouselContainer = createCarouselContainer(carouselName)
-  document.querySelector('.home_page_content.special_offers').appendChild(carouselContainer)
+  document.querySelector('.home_page_content.special_offers')?.appendChild(carouselContainer)
   const itemContainer = carouselContainer.childNodes[0]
   const selectorContainer = carouselContainer.childNodes[1]
   const gameUrls = []
