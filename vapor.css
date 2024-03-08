@@ -880,6 +880,77 @@ nav .reverse .input input:focus {
   border: 1px solid var(--bgHighlight);
 }
 
-.recently_updated_apps .carousel_thumbs {
+.recently_updated_apps .carousel_thumbs, .breadcrumbs, .queue_overflow_ctn {
   display: none !important;
+}
+
+.game_background_glow {
+  background: none !important;
+}
+
+.page_content {
+  width: 80vw !important;
+}
+
+.game_background_glow .leftcol {
+  width: 65% !important;
+}
+
+.page_title_area {
+  padding: 15px 25px;
+  box-sizing: border-box;
+  background-color: var(--bgMain);
+  width: 80vw !important;
+  color: var(--textMain);
+  font: var(--textHeadingLarge);
+  margin-bottom: 30px !important;
+  border-radius: 5px;
+}
+
+.apphub_HeaderStandardTop {
+  min-height: 0px !important;
+}
+
+.apphub_HomeHeaderContent, .apphub_HeaderStandardTop {
+  margin: 0px !important;
+}
+
+.apphub_HomeHeaderContent {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.game_page_background.game {
+  background-size: 100%;
+}
+
+.apphub_HeaderStandardTop {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.apphub_OtherSiteInfo {
+  display: flex !important;
+  justify-content: center;
+}
+
+.apphub_AppName {
+  margin-right: auto !important;
+}
+
+.btnv6_blue_hoverfade {
+  border-radius: 3px !important;
+  background-color: var(--bgHighlight) !important;
+  padding: 8px 0px !important;
+  font: var(--textBodyLarge);
+}
+
+.btnv6_blue_hoverfade:hover {
+  background: none !important;
+  background-color: var(--bgHover) !important;
+}
+
+.btn_medium > span {
+  color: var(--textMain);
 }

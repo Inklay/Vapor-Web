@@ -114,3 +114,13 @@ function removeTextNode(element , recursive = false) {
     }
   })
 }
+
+function getNodeText(element) {
+  let value
+  element.childNodes.forEach((child, _) => {
+    if (child.nodeType === 3 && !value) {
+      value = child.textContent
+    }
+  })
+  return value
+}

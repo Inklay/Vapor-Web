@@ -1,3 +1,5 @@
+const whishlistText = getNodeText(document.querySelector('#wishlist_link')).slice(0, -2)
+
 function createWhishlistButton(appid = undefined, whishlisted) {
   const container = document.createElement('div')
   
@@ -49,7 +51,7 @@ function createWhishlistButton(appid = undefined, whishlisted) {
 }
 
 function updateWishlistCount(count) {
-  document.querySelector('#whishlist-tab').innerHTML = `Whishlist (${count})`
+  document.querySelector('#whishlist-tab').innerHTML = `${whishlistText} (${count})`
 }
 
 function updateGameData(data) {

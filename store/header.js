@@ -56,7 +56,7 @@ function storeHeader() {
     const container = document.createElement('div')
     container.setAttribute('class', 'reverse')
     container.appendChild(input())
-    container.appendChild(createTab('https://store.steampowered.com/', window.location.href == 'https://store.steampowered.com/*', !isLogged, `Whishlist (${whishlistCount})`, 'whishlist-tab'))
+    container.appendChild(createTab('https://store.steampowered.com/', window.location.href == 'https://store.steampowered.com/*', !isLogged, `${whishlistText} (${whishlistCount})`, 'whishlist-tab'))
     container.appendChild(createTab('https://store.steampowered.com/', window.location.href == 'https://store.steampowered.com/*', !isLogged, 'Cart'))
     container.appendChild(settings())
 
