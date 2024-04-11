@@ -1,23 +1,34 @@
 const whishlistText = getNodeText(document.querySelector('#wishlist_link')).slice(0, -2)
 
-function createWhishlistButton(appid = undefined, whishlisted) {
+function createWhishlistButton(appid = undefined, whishlisted, addText = undefined, removeText = undefined) {
   const container = document.createElement('div')
+  const svgIdx = addText && removeText ? 1 : 0
   
   if (whishlisted) {
+    if (removeText) {
+      const text = document.createElement('span')
+      text.innerText = removeText
+      container.appendChild(text)
+    }
     container.appendChild(createSVG('25', '25', '0 0 25 25', svg.whishListFull))
     container.setAttribute('class', 'whishlist whishlisted')
   } else {
+    if (addText) {
+      const text = document.createElement('span')
+      text.innerText = addText
+      container.appendChild(text)
+    }
     container.appendChild(createSVG('25', '25', '0 0 25 25', svg.whishListEmpty))
     container.setAttribute('class', 'whishlist')
   }
   
   container.addEventListener('mouseenter', () => {
-    container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
+    container.childNodes[svgIdx].childNodes[0].setAttribute('d', svg.whishListFull)
   })
 
   container.addEventListener('mouseleave', () => {
     if (container.getAttribute('class').search('whishlisted') === -1) {
-      container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListEmpty)
+      container.childNodes[svgIdx].childNodes[0].setAttribute('d', svg.whishListEmpty)
     }
   })
 
@@ -28,12 +39,18 @@ function createWhishlistButton(appid = undefined, whishlisted) {
 
       if (whishlisted) {
         url = 'https://store.steampowered.com/api/removefromwishlist'
-        container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListEmpty)
+        container.childNodes[svgIdx].childNodes[0].setAttribute('d', svg.whishListEmpty)
         container.setAttribute('class', 'whishlist')
+        if (svgIdx === 1) {
+          container.childNodes[0].innerText = addText
+        }
       } else {
         url = 'https://store.steampowered.com/api/addtowishlist'
-        container.childNodes[0].childNodes[0].setAttribute('d', svg.whishListFull)
+        container.childNodes[svgIdx].childNodes[0].setAttribute('d', svg.whishListFull)
         container.setAttribute('class', 'whishlist whishlisted')
+        if (svgIdx === 1) {
+          container.childNodes[0].innerText = removeText
+        }
       }
       const xhr = new XMLHttpRequest()
       xhr.open('POST', url, true)

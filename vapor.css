@@ -548,13 +548,6 @@ nav .reverse .input input:focus {
   background-color: var(--bgHighlight);
   cursor: pointer;
   border-radius: 3px;
-}
-
-.whishlist:hover {
-  background-color: var(--bgHover);
-}
-
-.carousel_items .whishlist, .grid_item .whishlist {
   display: flex;
   align-items: flex-end;
   align-items: center;
@@ -563,6 +556,10 @@ nav .reverse .input input:focus {
   padding: 9px;
   margin-right: auto;
   margin-left: 0;
+}
+
+.whishlist:hover {
+  background-color: var(--bgHover);
 }
 
 .store_main_capsule > .ds_wishlist_flag {
@@ -953,4 +950,22 @@ nav .reverse .input input:focus {
 
 .btn_medium > span {
   color: var(--textMain);
+}
+
+.apphub_HeaderStandardTop {
+  gap: 10px;
+}
+
+.apphub_HomeHeaderContent .whishlist {
+  margin-right: 0;
+  padding: 11px;
+}
+
+.whishlist:has(span) {
+  width: fit-content;
+}
+
+.whishlist span {
+  font: var(--textBodyLarge);
+  margin-right: 10px;
 }
