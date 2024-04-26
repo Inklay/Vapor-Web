@@ -420,7 +420,7 @@ nav .reverse .input input:focus {
   padding: 0px !important;
 }
 
-.store_main_capsule .reason .main .tags > span, .store_main_capsule .reason .additional > div {
+.store_main_capsule .reason .main .tags > span, .store_main_capsule .reason .additional > div, .popular_tags > a, .app_tag.add_button {
   border-radius: 3px !important;
   background-color: var(--bgHighlight) !important;
   color: var(--textDim) !important;
@@ -890,7 +890,12 @@ nav .reverse .input input:focus {
 }
 
 .game_background_glow .leftcol {
-  width: 65% !important;
+  max-width: 75% !important;
+  width: 75% !important;
+}
+
+.rightcol {
+  width: 25% !important;
 }
 
 .page_title_area {
@@ -968,4 +973,86 @@ nav .reverse .input input:focus {
 .whishlist span {
   font: var(--textBodyLarge);
   margin-right: 10px;
+}
+
+a.saleEventBannerLink {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+a.saleEventBannerLink > img {
+  border-radius: 5px;
+}
+
+.saleEventBannerStyle {
+  transform: scale(1.37) !important;
+}
+
+.saleEventBannerStyle:hover {
+  transform: scale(1.4) !important;
+}
+
+#game_highlights {
+  background-color: var(--bgMain) !important;
+  padding: 16px;
+  box-sizing: border-box; 
+  border-radius: 5px;
+  display: flex !important;
+  flex-direction: row-reverse;
+}
+
+#highlight_player_area, .game_header_image_full {
+  border-radius: 3px !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.game_description_snippet {
+  font: var(--textBodyLarge) !important;
+}
+
+.subtitle.column {
+  color: var(--textDim) !important;
+  font: var(--textBodySmall) !important;
+  
+}
+
+.glance_ctn_responsive_left > div {
+  padding: 5px 0px !important;
+}
+
+.release_date .date {
+  color: var(--textMain) !important;
+  font: var(--textBodySmall) !important;
+}
+
+.summary.column, .summary.column > a {
+  color: var(--colorPrimary) !important;
+  font: var(--textBodySmall) !important;
+}
+
+.summary.column > a:hover {
+  color: var(--textMain) !important;
+}
+
+.glance_tags_label {
+  color: var(--textDim);
+  font: var(--textBodyMedium);
+}
+
+.popular_tags > a, .app_tag.add_button {
+  margin: 2px;
+}
+
+.store_main_capsule .reason .main .tags > span:hover, .store_main_capsule .reason .additional > div:hover, .popular_tags > a:hover, .app_tag.add_button:hover {
+  background: none;
+  background-color: var(--bgHover) !important;
+  color: var(--textMain) !important;
+}
+
+.glance_tags.popular_tags {
+  height: fit-content;
+  overflow: hidden;
+  display: inline-block;
+  white-space: initial;
 }

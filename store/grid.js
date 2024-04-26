@@ -107,7 +107,7 @@ function createGrid(classId) {
     return container
   }
 
-  document.querySelectorAll(`${classId} > a`).forEach((value, _) => {
+  document.querySelectorAll(`${classId} > div.tab_content_items > a`).forEach((value, _) => {
     getItemData(value)
   })
 
